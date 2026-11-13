@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Northlight is a small photo archive of nature, architecture, technology and travel. Filter, search and save your favourites.">
+  <meta name="color-scheme" content="light dark">
+  <title> – Photo Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#gallery">Skip to gallery</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="Northlight home">
+        <svg class="logo__mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+          <rect width="28" height="28" rx="7" fill="currentColor"/>
+          <circle cx="14" cy="14" r="6" fill="var(--bg)"/>
+          <circle cx="17" cy="11" r="2.4" fill="currentColor"/>
+        </svg>
+        <span class="logo__text">Image Gallery</span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main">
+        <a class="site-nav__link" href="#gallery">Gallery</a>
+        <button class="site-nav__link" type="button" id="navFavourites">Favourites <span class="badge" id="favBadge" hidden>0</span></button>
+        <a class="site-nav__link" href="#about">About</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="icon-btn" type="button" id="themeToggle" aria-label="Switch to dark mode">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Places and light, kept in one quiet archive.</h1>
+        <p class="hero__text">A small, hand-picked set of photographs from forests, cities, trails and workbenches. Search by subject, save the frames you like, and open any photo at full size.</p>
+      </div>
+    </section>
+
+    <!-- ============ Toolbar: filters + search ============ -->
+    <section class="toolbar" aria-label="Filter and search photos">
+      <div class="container toolbar__inner">
+        <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+
+        <form class="search" role="search" id="searchForm">
+          <label class="visually-hidden" for="searchInput">Search photos</label>
+          <svg class="icon search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+          <input class="search__input" id="searchInput" type="search" placeholder="Search photos" autocomplete="off">
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section class="container gallery-section" id="gallery" aria-labelledby="resultsText">
+      <p class="results" id="resultsText" role="status" aria-live="polite"></p>
+      <ul class="grid" id="grid"></ul>
+
+      <div class="empty" id="emptyState" hidden>
+        <svg class="empty__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="4"/><circle cx="17" cy="21" r="3"/><path d="m8 36 11-10 8 7 5-4 8 7"/></svg>
+        <h2 class="empty__title" id="emptyTitle">No photos found</h2>
+        <p class="empty__text" id="emptyText">Try a different search or category.</p>
+        <button class="btn" type="button" id="resetBtn">Show all photos</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="about">
+    <div class="container site-footer__inner">
+      <p class="site-footer__about"><strong>Image Gallery</strong> 
+    </div>
+  </footer>
+
+  <!-- ============ Lightbox (native dialog = focus trap + Escape for free) ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo preview">
+    <div class="lightbox__bar">
+      <p class="lightbox__count" id="lbCount"></p>
+      <div class="lightbox__tools">
+        <button class="lb-btn" type="button" id="lbLike" aria-pressed="false" aria-label="Add to favourites">
+          <svg class="icon icon--heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 3.7 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.3 0 5.3 3.2 4.2 6.6-1.7 4.8-9.2 9.4-9.2 9.4Z"/></svg>
+        </button>
+        <button class="lb-btn" type="button" id="lbDownload" aria-label="Download image">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+        </button>
+        <button class="lb-btn" type="button" id="lbClose" aria-label="Close preview">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <button class="lb-btn lb-nav lb-nav--prev" type="button" id="lbPrev" aria-label="Previous photo">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+    </button>
+
+    <figure class="lightbox__figure">
+      <div class="lightbox__stage">
+        <span class="spinner" id="lbSpinner" aria-hidden="true"></span>
+        <img class="lightbox__img" id="lbImg" alt="">
+      </div>
+      <figcaption class="lightbox__caption">
+        <span class="lightbox__title" id="lbTitle"></span>
+        <span class="lightbox__cat" id="lbCat"></span>
+      </figcaption>
+    </figure>
+
+    <button class="lb-btn lb-nav lb-nav--next" type="button" id="lbNext" aria-label="Next photo">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
+  </dialog>
+
+  <button class="to-top" type="button" id="toTop" aria-label="Back to top" hidden>
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
