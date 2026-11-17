@@ -14,22 +14,22 @@ This repository contains the tasks and projects I completed during my internship
 📂 Repository Structure
 
 CodeAlpha-Frontend-Internship/
-├── Task-1/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── README.md
-├── Task-2/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── README.md
-├── Task-3/
-│   ├── index.html
-│   ├── style.css
-│   ├── script.js
-│   └── README.md
-└── README.md
+├── Task-1/                                                                                                                                                        
+│   ├── index.html                                                                                                                                                 
+│   ├── style.css                                                                                                                                                  
+│   ├── script.js                                                                                                                                                  
+│   └── README.md                                                                                                                                                  
+├── Task-2/                                                                                                                                                        
+│   ├── index.html                                                                                                                                                 
+│   ├── style.css                                                                                                                                                  
+│   ├── script.js                                                                                                                                                  
+│   └── README.md                                                                                                                                                  
+├── Task-3/                                                                                                                                                        
+│   ├── index.html                                                                                                                                                 
+│   ├── style.css                                                                                                                                                  
+│   ├── script.js                                                                                                                                                  
+│   └── README.md                                                                                                                                                  
+└── README.md                                                                                                                                                      
 
 🚀 Technologies Used
 
