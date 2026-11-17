@@ -67,6 +67,6 @@ I would like to thank CodeAlpha for providing this internship opportunity and he
 
 Developed by: Sanskar Tripathi
 
-GitHub: ""
+GitHub: "https://github.com/sanskartripathi-eng"
 
 Domain: Frontend Development
