@@ -16,18 +16,25 @@ This repository contains the tasks and projects I completed during my internship
 CodeAlpha-Frontend-Internship/
 │
 ├── Task-1/
-│   ├── README.md
-│   └── Project Files
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── README.md
 │
 ├── Task-2/
-│   ├── README.md
-│   └── Project Files
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── README.md
 │
 ├── Task-3/
-│   ├── README.md
-│   └── Project Files
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── README.md
 │
 └── README.md
+
 
 🚀 Technologies Used
 
