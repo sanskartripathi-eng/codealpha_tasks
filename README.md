@@ -13,7 +13,7 @@ This repository contains the tasks and projects I completed during my internship
 
 📂 Repository Structure
 
-CodeAlpha-Frontend-Internship/
+CodeAlpha-Frontend-Internship/                                                                                                                                     
 ├── Task-1/                                                                                                                                                        
 │   ├── index.html                                                                                                                                                 
 │   ├── style.css                                                                                                                                                  
