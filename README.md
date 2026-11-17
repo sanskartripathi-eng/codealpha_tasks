@@ -47,10 +47,6 @@ CodeAlpha-Frontend-Internship/
 
 📌 Tasks Completed
 
-Task| Description
-Task 1| See individual task folder
-Task 2| See individual task folder
-Task 3| See individual task folder
 
 Each task has its own folder containing source code and a separate README file with project details.
 
