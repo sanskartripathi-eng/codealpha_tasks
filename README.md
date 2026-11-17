@@ -59,14 +59,6 @@ Task 3| See individual task folder
 
 Each task has its own folder containing source code and a separate README file with project details.
 
-▶️ How to Run Projects
-
-1. Clone or download this repository.
-2. Open the required task folder.
-3. Open "index.html" in your browser.
-4. Explore the project.
-
-🙏 Acknowledgement
 
 I would like to thank CodeAlpha for providing this internship opportunity and helping me improve my practical frontend development skills.
 
